@@ -5,6 +5,7 @@ By: Aashia Mehta and Shiv Ansal
 
 ## Functionalities
 - [x] User can input their name, a starting point, destination, car's MPG, gasoline type, and their weight.
+- [x] Uses materialize.css as a framework for the website for a clean UI
 - [x] Starting point and destination give auto-suggestions depending on what the user types.
 - [x] User is given the time it takes from point A to point B, distance, gas price, calories burnt, and their carbon footprint.
 - [x] A map is shown with written directions on how to get from point A to point B.
