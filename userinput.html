@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Way To Go</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
+</head>
+<body>
+  <nav class="red lighten-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="icons/logo.png" width =30px> </a>
+    </div>
+  </nav>
+ <div id="userinputPage">
+ <div class="section no-pad-bot" id="index-banner">
+ <div class="container">
+  <div class="row">
+    <form class="col s12" id="form">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Type your first name here." id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Type your last name here." id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Type an address." id="orgin" type="text" class="validate" name="orgin">
+          <label for="starting_point">Starting Point</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Type an address." id="destination" type="text" class="validate" name="destination">
+          <label for="destination">Destination</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Type your car's mile/gallon." id="mpg" type="text" class="validate" name="mpg">
+          <label for="destination">Car's Mile Per Gallon</label>
+        </div>
+      
+          <label>Gasoline Type</label>
+  <select class="browser-default col s6" id="gastype" name="gastype">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Regular</option>
+    <option value="2">Midgrade</option>
+    <option value="3">Premium</option>
+    <option value="4">Diesel</option>
+  </select>
+      </div>
+
+     <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Type in your weight." id="weightUser" type="text" class="validate" name="weightUser">
+          <label for="weightUser">Weight</label>
+        </div>
+      </div>
+   
+       <div class="row">
+        <button href="summary.html" type="submit" id="create-summary-button" class="btn-large waves-effect waves-light teal lighten-1" >Create Summary</button>
+      </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div id="summaryPage" style="display: none;">
+    <div class="row">
+
+        <div class="col s4">
+          <div class="card red lighten-3">
+            <div class="card-content white-text">
+              <span class="card-title">Driving</span>
+              <ul>
+              
+               <li id="DRIVINGtime"><i id="i" class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="DRIVINGdistancetraveled"><i id="i" class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li id="DRIVINGgasprice"><i id="i" class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is </li><br>
+                <li><i id="i" class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt are 0 calories</li><br>
+                <li id="DRIVINGcarbon"><i id="i" class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint is</li>
+              </ul>
+            </div>
+            <div class="card-action" id="drivingmap">
+              <a href="#">Click for this way.</a>
+            </div>
+          </div>
+        </div>
+         <div class="col s4">
+          <div class="card red lighten-3">
+            <div class="card-content white-text">
+              <span class="card-title">Bicycling</span>
+              <ul>
+               <li id="BICYCLINGtime"><i id="i" class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="BICYCLINGdistancetraveled"><i id="i" class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li><i id="i" class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is $0.00</li><br>
+                <li id="BICYCLINGcalories"><i id="i" class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt is</li><br>
+                <li><i id="i" class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint are 0 lbs of CO2</li>
+              </ul>
+            </div>
+            <div class="card-action" id="bikingmap">
+              <a href="#">Click for this way.</a>
+            </div>
+          </div>
+        </div>
+         <div class="col s4">
+          <div class="card red lighten-3">
+            <div class="card-content white-text">
+              <span class="card-title">Walking</span>
+              <ul>
+               <li id="WALKINGtime"><i id="i" class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="WALKINGdistancetraveled"><i id="i" class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li><i id="i" class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is $0.00</li><br>
+                <li id="WALKINGcalories"><i id="i" class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt is</li><br>
+                <li><i id="i" class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint are 0 lbs of CO2</li>
+              </ul>
+            </div>
+            <div class="card-action" id="walkingmap">
+              <a href="#">Click for this way.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div style="width:100%; height:10%; font-color=black;" id="distance_direct"></div>
+	      <div style="width:100%; height:10%; font-color=black;" id="distance_road"></div>
+        
+  </div>
+  <center>
+   <div class="row"style="width: 600px;">
+         <div id="map" style="width: 300px; height: 400px; float: left;"></div> 
+         <div id="panel" style="width: 300px; height: 400px; float: right; overflow: scroll;"></div> 
+      </div>
+  </center>
+
+<footer class="page-footer red lighten-2 row" style="float: bottom;">
+    <div class="white-text">
+      <div class="container">
+      Made by Aashia Mehta and Shiv Ansal
+      </div><br>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?AIzaSyAgia3GSTTJx4-6nLyyTnD949qWj5jdqeE&sensor=false&libraries=places"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function(){
+      var autocomplete = new google.maps.places.Autocomplete($('#orgin')[0]);
+      var autocomplete2 = new google.maps.places.Autocomplete($('#destination')[0]);
+
+      var location1;
+      var location2;
+      var orgin;
+      var destination;
+      var mapCenter;
+      var mapCenterLong;
+      var mapCenterLast;
+      var geocoder;
+      var map;
+      var distance;
+      var mpg;
+      var gastype;
+      var weightUser;
+      var carbonFootprint;
+      var type;
+
+      function initialize(transportationType){ //Find the two locations(Orgin and Destination)
+        geocoder = new google.maps.Geocoder(); //geocoder to convert addreess to long/latitude
+
+        orgin = $("#orgin").val(); //take user input for different values
+        destination = $("#destination").val();
+        mpg = $("#mpg").val();
+        gastype = $("#gastype").val();
+        weightUser = $("#weightUser").val();
+
+
+        console.log('origin', orgin);
+        console.log('destination', destination);
+        console.log('mpg',mpg);
+        console.log('gastype',gastype);
+        console.log('weightUser',weightUser);
+
+        if(geocoder){//converting into coordinatates
+          geocoder.geocode( { 'address': orgin}, function(results)
+          {
+            location1 = results[0].geometry.location;
+          });
+          geocoder.geocode( { 'address': destination}, function(results)
+          {
+            location2 = results[0].geometry.location;
+            displayMap(transportationType); //in order to show the map
+          });
+          }
+        }
+
+        function displayMap(transportationType){
+          mapCenterLong = (location1.lat()+location2.lat())/2;
+          mapCenterLast = (location1.lng()+location2.lng())/2
+          mapCenter = new google.maps.LatLng(mapCenterLong,mapCenterLast);
+
+          var mapOptions =
+            {
+              zoom: 1,
+              center: mapCenter,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+         //   map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+            //route
+            directionsService = new google.maps.DirectionsService();
+            directionsDisplay = new google.maps.DirectionsRenderer(
+            {
+              suppressMarkers: true,
+              suppressInfoWindows: true
+            });
+
+            directionsDisplay.setMap(map);
+            var request = {
+                origin:orgin,
+                destination:destination,
+                travelMode: google.maps.DirectionsTravelMode[transportationType]
+            };
+
+            directionsService.route(request, function(response, status)
+            {
+            if (status == google.maps.DirectionsStatus.OK)
+            {
+              directionsDisplay.setDirections(response);
+              distance = response.routes[0].legs[0].distance.text;
+              var time = response.routes[0].legs[0].duration.text;
+              document.getElementById(transportationType+"distancetraveled").innerHTML += " "+distance;
+              document.getElementById(transportationType+"time").innerHTML += " "+time;
+              console.log(distance);
+              var gallons=(parseFloat(distance))/(parseFloat(mpg));
+              var gasMoney;
+              var caloriesBurnedWalk;
+              var caloriesBurnedBike;
+              if(gastype==1)
+                gasMoney=gallons*2.69; 
+              else if(gastype==2)
+                gasMoney=gallons*2.79;
+              else if(gastype==3)
+                gasMoney=gallons*2.89;
+              else if(gastype==4)
+                gasMoney=gallons*2.69;
+              carbonFootprint=parseFloat(gallons)*19.64;
+
+              if(transportationType == 'DRIVING'){
+                $('#DRIVINGgasprice').html($('#DRIVINGgasprice').html()+"$"+gasMoney.toFixed(2));
+               $('#DRIVINGcarbon').html($('#DRIVINGcarbon').html()+" "+carbonFootprint+" lbs of CO2");
+               console.log(carbonFootprint);
+             }
+              else
+                $('#'+transportationType+'gasprice').html($('#'+transportationType+'gasprice').html()+"0");
+              console.log("gas$ "+gasMoney);
+              console.log("gallons is "+gallons);
+              caloriesBurnedWalk=(parseFloat(weightUser)*0.029)*parseFloat(time);
+              caloriesBurnedBike=(parseFloat(weightUser)*0.048)*parseFloat(time);
+              console.log(caloriesBurnedWalk);
+              console.log(caloriesBurnedBike);
+              if(transportationType == 'BICYCLING')
+                $('#BICYCLINGcalories').html($('#BICYCLINGcalories').html()+" "+caloriesBurnedBike.toFixed(2)+" calories");
+               else if(transportationType == 'WALKING')
+                $('#WALKINGcalories').html($('#WALKINGcalories').html()+" "+caloriesBurnedWalk.toFixed(2)+" calories");
+             // window.open("index.html");
+                
+               }
+             
+               
+            });
+
+              // create the markers for the two locations
+              var marker1 = new google.maps.Marker({
+                map: map,
+                position: location1,
+                title: "First location"
+            });
+
+              var marker2 = new google.maps.Marker({
+                map: map,
+                position: location2,
+                title: "Second location"
+            });
+
+              // create the text to be shown in the infowindows
+              var orgintext = '<div id="content">'+
+                  '<h1 id="firstHeading">First location</h1>'+
+                  '<div id="bodyContent">'+
+                  '<p>Coordinates: '+location1+'</p>'+
+                  '<p>Address: '+orgin+'</p>'+
+                  '</div>'+
+                  '</div>';
+
+              var destinationtext = '<div id="content">'+
+                '<h1 id="firstHeading">Second location</h1>'+
+                '<div id="bodyContent">'+
+                '<p>Coordinates: '+location2+'</p>'+
+                '<p>Address: '+destination+'</p>'+
+                '</div>'+
+                '</div>';
+
+              // create info boxes for the two markers
+              var infowindow1 = new google.maps.InfoWindow({
+                content: orgintext
+              }); 
+              var infowindow2 = new google.maps.InfoWindow({
+                content: destinationtext
+              });
+              // add action events so the info windows will be shown when the marker is clicked
+                google.maps.event.addListener(marker1, 'click', function() {
+                  infowindow1.open(map,marker1);
+                });
+                google.maps.event.addListener(marker2, 'click', function() {
+                  infowindow2.open(map,marker1);
+                });
+
+                // compute distance between the two points
+                /*var R = 6371;
+                var distanceLat = toRad(location2.lat()-location1.lat());
+                var distanceLon = toRad(location2.lng()-location1.lng());
+
+                var distanceLat1 = toRad(location1.lat());
+                var distanceLat2 = toRad(location2.lat());
+
+                var a = Math.sin(distanceLat/2) * Math.sin(distanceLat/2) +
+                    Math.cos(distanceLat1) * Math.cos(distanceLat1) *
+                    Math.sin(distanceLon/2) * Math.sin(distanceLon/2);
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                var d = R * c;
+
+                document.getElementById("distancetraveled").innerHTML += d;*/
+              }
+          function toRad(deg){
+            return deg * Math.PI/180;
+            }
+
+      $('#form').submit(function(e){
+        e.preventDefault();
+        var name = $('#name').val();
+        var orgin = $('#starting_point').val();
+        var destination = $('#destination').val();
+        var mpg = $('#mpg').val();
+        $('#userinputPage').hide();
+        $('#summaryPage').show();
+        initialize('DRIVING');
+        initialize('WALKING');
+        initialize('BICYCLING');
+        $('#walkingmap').click(function(){
+          maping("WALKING");
+        });
+
+        $('#bikingmap').click(function(){
+          maping('BICYCLING');
+        });
+
+        $('#drivingmap').click(function(){
+          maping('DRIVING');
+
+        });
+      });
+      function maping(type){
+        var directionsService = new google.maps.DirectionsService();
+         var directionsDisplay = new google.maps.DirectionsRenderer();
+    
+         var map = new google.maps.Map(document.getElementById('map'), {
+           zoom:7,
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+         });
+        
+         directionsDisplay.setMap(map);
+         directionsDisplay.setPanel(document.getElementById('panel'));
+          orgin = $("#orgin").val(); //take user input for different values
+        destination = $("#destination").val();
+        //alert(orgin+destination+'asdf');
+         var request = {
+           origin: orgin, 
+           destination: destination,
+           travelMode: google.maps.DirectionsTravelMode[type]
+         };
+    
+         directionsService.route(request, function(response, status) {
+           if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay.setDirections(response);
+           }
+         });
+       }
+    });
+  </script>
+  </body>
+</html>
